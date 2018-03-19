@@ -1,0 +1,37 @@
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.form-container{
+    text-align: center;
+    width: 85%;
+    margin: 10% auto 0 auto;
+    padding: 2%;
+    border: solid 1px lightgrey;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    opacity: 0.9;
+    background-color: white;
+}
+
+.input-field{
+    width: 90%;
+    margin-left: 5%;
+}
+
+.form-container button{
+    margin: 0 auto;
+    width: 50%;
+    font-size: .8em;
+    background-color: #3f51b5;
+
+}
+
+.legend{
+    text-align: center;
+}
+
+.btn{
+    font-size: .8em;
+    background-color: #3f51b5;
+}

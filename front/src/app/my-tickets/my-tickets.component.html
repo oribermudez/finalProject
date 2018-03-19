@@ -1,0 +1,13 @@
+<app-user-nav></app-user-nav>
+<ul class="collection">
+    <li *ngFor="let ticket of tickets" class="collection-item avatar">
+        <i class="material-icons circle red">settings</i>
+      <span class="title"><b>Ticket: {{ticket._id.substring(16)}}</b></span>
+      <p><b>Services down:</b> {{ticket.services}}<br>
+         <b>Created by:</b> {{ticket.owner}}<br>
+         <b>Address:</b> {{ticket.location.address}}<br>
+         <b>Created at:</b> {{ticket.created_at}} <br>
+         <b>Status:</b> {{ticket.status}}
+      </p>
+  </li>
+</ul>

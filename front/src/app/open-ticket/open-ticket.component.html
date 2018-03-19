@@ -1,0 +1,45 @@
+<app-user-nav></app-user-nav>
+<div class="form-container">
+    <form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)" class="col s12">
+      <h5>Service down ticket</h5>
+          <p class="legend">We are very sorry you are having trouble with our services. Please answer the following questions.</p>
+          <div class="input-field col s6">
+              <select name="services" id="services" multiple ngModel>
+                <option value="" disabled selected>Services down? </option>
+                <option value="1">Internet</option>
+                <option value="2">Television</option>
+                <option value="3">Phone</option>
+              </select>
+          </div>
+          <div name="los" class="input-field col s12">
+              <select name="lightcolor" id="lightcolor" ngModel>
+                <option value="" disabled selected>What color is the modem light LOS?</option>
+                <option value="1">Red</option>
+                <option value="2">Green</option>
+              </select>
+            </div>
+          <p>Is your modem correctly plugged in?</p>
+          <p>
+              <input name="connected" type="checkbox" id="puggled-in" ngModel />
+              <label for="puggled-in">Yes</label>
+          </p>
+          <hr>
+          <p>Have you tried resetting your modem?</p>
+          <p>
+              <input name="resetted" type="checkbox" id="resetted" ngModel/>
+              <label for="resetted">Yes</label>
+          </p>
+          <hr>
+            <div class="file-field input-field">
+                <div class="btn">
+                  <span>Upload</span>
+                  <input name="image" type="file" multiple (change)="manageFile($event)">
+                </div>
+                <div class="file-path-wrapper">
+                  <input class="file-path validate" type="text" placeholder="Modem photo.">
+                </div>
+              </div>
+            
+      <button (click)="login()" class="btn waves-effect waves-light" type="submit" name="action">Send</button>
+    </form>
+    </div>

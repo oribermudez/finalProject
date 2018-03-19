@@ -1,0 +1,89 @@
+<app-managers-nav></app-managers-nav>
+<h4><b>Control Map</b></h4>
+<div>
+    <div class="legend">
+        <img src="../assets/car-with-wrench.png" alt="tech">
+        <span><b>Tech Crew</b></span>
+        <img src="../assets/placeholder (3).png" alt="marker">
+        <span><b>Ticket</b></span>
+    </div>
+</div>
+<app-map></app-map>
+<h4><b>Tickets</b></h4>
+<ul class="collapsible" data-collapsible="expandable">      
+    <li>
+          <div class="collapsible-header"><i class="material-icons">place</i><b>Zone 1</b></div>
+          <ul class="collection collapsible-body">
+                <li *ngFor="let ticket of zone1" class="collection-item avatar">
+                    <i class="material-icons circle red">settings</i>
+                  <span class="title"><b>Ticket: {{ticket._id.substring(16)}}</b></span>
+                  <p><b>Services down:</b> {{ticket.services}}<br>
+                     <b>Created by:</b> {{ticket.owner}}<br>
+                     <b>Address:</b> {{ticket.location.address}}<br>
+                     <b>Created at:</b> {{ticket.created_at}} <br>
+                     <b>Status:</b> {{ticket.status}}
+                  </p>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">place</i><b>Zone 2</b></div>
+          <ul class="collection collapsible-body">
+                <li *ngFor="let ticket of zone2" class="collection-item avatar">
+                    <i class="material-icons circle red">settings</i>
+                  <span class="title"><b>Ticket: {{ticket._id.substring(16)}}</b></span>
+                  <p><b>Services down:</b> {{ticket.services}}<br>
+                     <b>Created by:</b> {{ticket.owner}}<br>
+                     <b>Address:</b> {{ticket.location.address}}<br>
+                     <b>Created at:</b> {{ticket.created_at}} <br>
+                     <b>Status:</b> {{ticket.status}}
+                  </p>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">place</i><b>Zone 3</b></div>
+          <ul class="collection collapsible-body">
+                <li *ngFor="let ticket of zone3" class="collection-item avatar">
+                    <i class="material-icons circle red">settings</i>
+                  <span class="title"><b>Ticket: {{ticket._id.substring(16)}}</b></span>
+                  <p><b>Services down:</b> {{ticket.services}}<br>
+                     <b>Created by:</b> {{ticket.owner}}<br>
+                     <b>Address:</b> {{ticket.location.address}}<br>
+                     <b>Created at:</b> {{ticket.created_at}} <br>
+                     <b>Status:</b> {{ticket.status}}
+                  </p>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">place</i><b>Zone 4</b></div>
+          <ul class="collection collapsible-body">
+                <li *ngFor="let ticket of zone4" class="collection-item avatar">
+                    <i class="material-icons circle red">settings</i>
+                  <span class="title"><b>Ticket: {{ticket._id.substring(16)}}</b></span>
+                  <p><b>Services down:</b> {{ticket.services}}<br>
+                     <b>Created by:</b> {{ticket.owner}}<br>
+                     <b>Address:</b> {{ticket.location.address}}<br>
+                     <b>Created at:</b> {{ticket.created_at}} <br>
+                     <b>Status:</b> {{ticket.status}}
+                  </p>
+              </li>
+            </ul>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">place</i><b>Zone 5</b></div>
+          <ul class="collection collapsible-body">
+                <li *ngFor="let ticket of zone5" class="collection-item avatar">
+                    <i class="material-icons circle red">settings</i>
+                  <span class="title"><b>Ticket: {{ticket._id.substring(16)}}</b></span>
+                  <p><b>Services down:</b> {{ticket.services}}<br>
+                     <b>Created by:</b> {{ticket.owner}}<br>
+                     <b>Address:</b> {{ticket.location.address}}<br>
+                     <b>Created at:</b> {{ticket.created_at}} <br>
+                     <b>Status:</b> {{ticket.status}}
+                  </p>
+              </li>
+            </ul>
+        </li>
+      </ul>

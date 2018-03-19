@@ -1,0 +1,15 @@
+<section class="section-padding">
+<div class="map-container">
+    <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom"> 
+      <div *ngFor="let ticket of tickets">
+        <agm-marker [latitude]="ticket.location.coordinates[1]" [longitude]="ticket.location.coordinates[0]" (markerClick)="onChoseMarker(ticket)">
+          <agm-info-window> 
+            <b>Ticket ID:</b> {{ticket._id}}
+            <b>Created at:</b> {{ticket.created_at}}
+          </agm-info-window>
+        </agm-marker>
+      </div>
+    </agm-map>
+</div>
+</section>
+<!-- key: AIzaSyAWwhYJ8MBRN6YfD0VesqiDn1FIzEOT3O0-->

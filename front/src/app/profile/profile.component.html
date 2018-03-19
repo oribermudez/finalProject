@@ -1,0 +1,68 @@
+<app-user-nav></app-user-nav>
+<div class="greeting" ><h5><b>Hi {{user.name}}</b></h5></div>
+<div>
+    <div class="col s12 m7">
+        <div class="card horizontal">
+          <div class="card-image">
+            <img src="../assets/wifi2.png">
+          </div>
+          <div class="card-stacked">
+              <h6 class="header">Internet</h6>
+            <div class="card-content">
+              <p><b>{{user.services[0].Internet}}</b></p>
+            <div class="card-action">
+              <a href="#">Upgrade plan</a>
+          </div>
+        </div>
+      </div>
+</div>
+
+<div>
+    <div class="col s12 m7">
+        <div class="card horizontal">
+          <div class="card-image">
+            <img src="../assets/television.png">
+          </div>
+          <div class="card-stacked">
+              <h6 class="header">Television</h6>
+            <div class="card-content">
+              <p><b>{{user.services[1].Television}}</b></p>
+            <div class="card-action">
+              <a href="#">Upgrade plan</a>
+          
+          </div>
+        </div>
+      </div>
+</div>
+
+<div>
+    <div class="col s12 m7">
+        <div class="card horizontal">
+          <div class="card-image">
+            <img src="../assets/viber.png">
+          </div>
+          <div class="card-stacked">
+              <h6 class="header">Phone</h6>
+            <div class="card-content">
+              <p><b>{{user.services[2].Phone}}</b></p>
+            <div class="card-action">
+              <a href="#">Upgrade plan</a>
+          </div>
+        </div>
+      </div>
+</div>
+
+<div>
+    <div class="col s12 m7">
+        <div class="card horizontal">
+          <div class="card-stacked">
+              <p><b>Total: $41.50 a month</b></p>
+        <div>
+            <a id="pay-button" class="waves-effect waves-light btn"><i class="material-icons right">payment</i>Pay Receipt</a>
+        </div>
+      </div>
+      
+</div>
+
+
+

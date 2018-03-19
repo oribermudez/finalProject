@@ -1,0 +1,17 @@
+<nav>
+  <div class="nav-wrapper">
+    <img src="../assets/logo2.png" alt="Logo">
+    <a href="/" class="brand-logo">Timeprove</a>
+    <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+    <ul class="right hide-on-med-and-down">
+        <li><a [routerLink]="['../dashboard']" id="profile-btn-l" class="waves-effect waves-light btn">My Dashboard<i class="material-icons right">equalizer</i></a></li>
+        <li><a [routerLink]="['../tickets']" id="tickets-btn-l" class="waves-effect waves-light btn">Control Room<i class="material-icons right">grain</i></a></li>
+        <li><a id="logout-btn-l" (click)="logout()" class="waves-effect waves-light btn">Logout<i class="material-icons right">exit_to_app</i></a></li>
+    </ul>
+    <ul class="side-nav" id="mobile-demo">
+      <li><a [routerLink]="['../dashboard']" id="profile-btn-s" class="waves-effect waves-light btn">My Dashboard<i class="material-icons right">equalizer</i></a></li>
+      <li><a [routerLink]="['../tickets']" id="tickets-btn-s" class="waves-effect waves-light btn">Control Room<i class="material-icons right">grain</i></a></li>
+      <li><a id="logout-btn-s" (click)="logout()" class="waves-effect waves-light btn">Logout<i class="material-icons right">exit_to_app</i></a></li>
+    </ul>
+  </div>
+</nav>

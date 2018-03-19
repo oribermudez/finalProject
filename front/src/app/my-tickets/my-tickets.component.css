@@ -1,0 +1,32 @@
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+nav .nav-wrapper {
+    background-color: #3f51b5;
+}
+
+nav .btn {
+    background-color: #e8646d;
+}
+
+nav .nav-wrapper img{
+    width: 9vh;
+    padding: 10px;
+}
+
+#ticket-btn-s{
+    background-color: #8f9cff;
+}
+
+#ticket-btn-l{
+    background-color: #8f9cff;
+}
+
+img, .brand-logo{
+    margin-left: 5%;
+}
+
+.side-nav li > a > i{
+    color: white;
+}

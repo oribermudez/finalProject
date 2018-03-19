@@ -1,0 +1,14 @@
+<section class="section-padding">
+    <div class="map-container">
+        <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom"> 
+          <div >
+            <agm-marker [latitude]="lat" [longitude]="lng" [iconUrl]="'../assets/car-with-wrench.png'">
+              <agm-info-window> 
+                <p>You are here!</p>
+              </agm-info-window>
+            </agm-marker>
+          </div>
+        </agm-map>
+    </div>
+    </section>
+    <!-- key: AIzaSyAWwhYJ8MBRN6YfD0VesqiDn1FIzEOT3O0-->
