@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { TicketsService } from '../services/tickets.service';
 import {FirebaseService} from '../services/firebase.service';
 import firebase from '../services/firebase.service';
@@ -9,11 +9,14 @@ import firebase from '../services/firebase.service';
   styleUrls: ['./map.component.css']
 })
 export class MapComponent implements OnInit {
+  @Output() markerSelect = new EventEmitter<any>();
+
   zoom = 12;
   lat = 19.3977933;
   lng = -99.173614;
   tickets;
   techs = [];
+  target;
   
   constructor(private ticketServ: TicketsService) { }
 
@@ -30,8 +33,10 @@ export class MapComponent implements OnInit {
     });
   }
 
-  onChoseMarker(event) {
-    console.log(event);
+  onChoseMarker(ticket) {
+    this.target = ticket;
+    this.markerSelect.emit(this.target);
+    console.log('Hijo: ', this.target);
   }
 
 }

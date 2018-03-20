@@ -4,18 +4,18 @@
       <h5>Service down ticket</h5>
           <p class="legend">We are very sorry you are having trouble with our services. Please answer the following questions.</p>
           <div class="input-field col s6">
-              <select name="services" id="services" multiple ngModel>
+              <select name="services" id="services" multiple ngModel materialize="material_select">
                 <option value="" disabled selected>Services down? </option>
-                <option value="1">Internet</option>
-                <option value="2">Television</option>
-                <option value="3">Phone</option>
+                <option value="Internet">Internet</option>
+                <option value="Television">Television</option>
+                <option value="Phone">Phone</option>
               </select>
           </div>
           <div name="los" class="input-field col s12">
-              <select name="lightcolor" id="lightcolor" ngModel>
+              <select name="lightcolor" id="lightcolor" ngModel materialize="material_select">
                 <option value="" disabled selected>What color is the modem light LOS?</option>
-                <option value="1">Red</option>
-                <option value="2">Green</option>
+                <option value="Red">Red</option>
+                <option value="Green">Green</option>
               </select>
             </div>
           <p>Is your modem correctly plugged in?</p>

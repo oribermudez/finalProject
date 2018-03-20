@@ -1,9 +1,5 @@
 <app-managers-nav></app-managers-nav>
 
-<p *ngFor="let bliss of blisses">
-    {{bliss}}
-</p>
-
 <h4><b>Control Map</b></h4>
 <div>
     <div class="legend">
@@ -13,13 +9,13 @@
         <span><b>Ticket</b></span>
     </div>
 </div>
-<app-map></app-map>
+<app-map (markerSelect)="highlight($event)"></app-map>
 <h4><b>Tickets</b></h4>
 <ul class="collapsible" data-collapsible="expandable">      
     <li>
           <div class="collapsible-header"><i class="material-icons">place</i><b>Zone 1: Polanco</b></div>
-          <ul class="collection collapsible-body">
-                <li *ngFor="let ticket of zone1" class="collection-item avatar">
+          <ul id="zone1" class="collection collapsible-body">
+                <li *ngFor="let ticket of zone1" id="{{ticket._id}}" class="collection-item avatar">
                     <i class="material-icons circle red">settings</i>
                   <span class="title"><b>Ticket: {{ticket._id.substring(16)}}</b></span>
                   <p><b>Services down:</b> {{ticket.services}}<br>
@@ -33,8 +29,8 @@
         </li>
         <li>
           <div class="collapsible-header"><i class="material-icons">place</i><b>Zone 2: Reforma</b></div>
-          <ul class="collection collapsible-body">
-                <li *ngFor="let ticket of zone2" class="collection-item avatar">
+          <ul id="zone2" class="collection collapsible-body">
+                <li *ngFor="let ticket of zone2" id="{{ticket._id}}" class="collection-item avatar">
                     <i class="material-icons circle red">settings</i>
                   <span class="title"><b>Ticket: {{ticket._id.substring(16)}}</b></span>
                   <p><b>Services down:</b> {{ticket.services}}<br>
@@ -48,8 +44,8 @@
         </li>
         <li>
           <div class="collapsible-header"><i class="material-icons">place</i><b>Zone 3: Narvarte</b></div>
-          <ul class="collection collapsible-body">
-                <li *ngFor="let ticket of zone3" class="collection-item avatar">
+          <ul id="zone3" class="collection collapsible-body">
+                <li *ngFor="let ticket of zone3" id="{{ticket._id}}" class="collection-item avatar">
                     <i class="material-icons circle red">settings</i>
                   <span class="title"><b>Ticket: {{ticket._id.substring(16)}}</b></span>
                   <p><b>Services down:</b> {{ticket.services}}<br>
@@ -63,8 +59,8 @@
         </li>
         <li>
           <div class="collapsible-header"><i class="material-icons">place</i><b>Zone 4: Condesa, Roma, Nápoles</b></div>
-          <ul class="collection collapsible-body">
-                <li *ngFor="let ticket of zone4" class="collection-item avatar">
+          <ul id="zone4" class="collection collapsible-body">
+                <li *ngFor="let ticket of zone4" id="{{ticket._id}}" class="collection-item avatar">
                     <i class="material-icons circle red">settings</i>
                   <span class="title"><b>Ticket: {{ticket._id.substring(16)}}</b></span>
                   <p><b>Services down:</b> {{ticket.services}}<br>
@@ -78,8 +74,8 @@
         </li>
         <li>
           <div class="collapsible-header"><i class="material-icons">place</i><b>Zone 5: Coyoacan</b></div>
-          <ul class="collection collapsible-body">
-                <li *ngFor="let ticket of zone5" class="collection-item avatar">
+          <ul id="zone5" class="collection collapsible-body">
+                <li *ngFor="let ticket of zone5" id="{{ticket._id}}" class="collection-item avatar">
                     <i class="material-icons circle red">settings</i>
                   <span class="title"><b>Ticket: {{ticket._id.substring(16)}}</b></span>
                   <p><b>Services down:</b> {{ticket.services}}<br>
