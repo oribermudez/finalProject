@@ -8,6 +8,7 @@ import { ShowTicketsComponent } from '../show-tickets/show-tickets.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { MyTicketsComponent } from '../my-tickets/my-tickets.component';
 import { TechMapComponent } from '../tech-map/tech-map.component';
+import { ScheduleComponent } from '../schedule/schedule.component';
 
 export const routes: Routes = [
     {path: 'mypage' , component: ProfileComponent},
@@ -17,4 +18,5 @@ export const routes: Routes = [
     {path: 'dashboard' , component: DashboardComponent},
     {path: 'tickets' , component: ShowTicketsComponent},
     {path: 'techmap' , component: TechMapComponent},
+    {path: 'schedule' , component: ScheduleComponent}
 ];

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TicketsService } from '../services/tickets.service';
+import {FirebaseService} from '../services/firebase.service';
+import firebase from '../services/firebase.service';
 
 
 @Component({
@@ -14,9 +16,11 @@ export class ShowTicketsComponent implements OnInit {
   zone3;
   zone4;
   zone5;
-  constructor(private ticketServ: TicketsService) { }
+  constructor(private ticketServ: TicketsService, private firebaseService: FirebaseService) { }
+
 
   ngOnInit() {
+
     ($('.collapsible') as any).collapsible();
 
     this.ticketServ.getTickets()

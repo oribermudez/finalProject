@@ -1,0 +1,56 @@
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+}
+nav .nav-wrapper {
+    background-color: #3f51b5;
+}
+
+nav .btn {
+    background-color: #e8646d;
+}
+
+nav .nav-wrapper img{
+    width: 9vh;
+    padding: 10px;
+}
+
+#open-btn-s{
+    background-color: #fa9653;
+}
+
+#open-btn-l{
+    background-color: #fa9653;
+}
+
+img, .brand-logo{
+    margin-left: 5%;
+}
+
+.side-nav li > a > i{
+    color: white;
+}
+
+#profile-btn-s{
+    background-color: #e83b47;
+}
+
+#profile-btn-l{
+    background-color: #e83b47;
+}
+
+#tickets-btn-s{
+    background-color: #3773e2;
+}
+
+#tickets-btn-l{
+    background-color: #3773e2;
+}
+
+#logout-btn-s{
+   background-color: #8f9cff;
+}
+
+#logout-btn-l{
+    background-color: #8f9cff;
+ }

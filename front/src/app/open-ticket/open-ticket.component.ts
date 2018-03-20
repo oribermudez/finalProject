@@ -15,20 +15,19 @@ export class OpenTicketComponent implements OnInit {
     ($('select') as any).material_select();
   }
 
+  manageFile(e) {
+    this.formData.append(e.target.files[0].name, e.target.files[0]);
+    console.log(e.target.files[0]);
+  }
+
   onSubmit(form) {
-    console.log(form.value);
+    console.log('form value', form.value);
     const keys = Object.keys(form.value);
     for (let key of keys) {
       this.formData.append(key, form.value);
     }
-    this.ticketServ.multipleUpload(this.formData)
-  }
-
-  manageFile(e) {
-    for (let file of e.target.files) {
-    this.formData.append(e.target.name, file);
-    }
-    console.log(e.target.files[0]);
+    console.log('formData', this.formData);
+    (this.ticketServ.multipleUpload(this.formData) as any).subscribe (res => console.log(res));
   }
 
 }

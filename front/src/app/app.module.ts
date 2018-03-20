@@ -13,6 +13,7 @@ import * as $ from 'jquery';
 // Services
 import {SessionService} from './services/auth.service';
 import { TicketsService } from './services/tickets.service';
+import {FirebaseService} from './services/firebase.service';
 
 // Routes
 import { routes } from './routes/app.routing';
@@ -30,6 +31,8 @@ import { MyTicketsComponent } from './my-tickets/my-tickets.component';
 import { ManagersNavComponent } from './managers-nav/managers-nav.component';
 import { MapComponent } from './map/map.component';
 import { TechMapComponent } from './tech-map/tech-map.component';
+import { TechNavComponent } from './tech-nav/tech-nav.component';
+import { ScheduleComponent } from './schedule/schedule.component';
 
 
 @NgModule({
@@ -44,7 +47,9 @@ import { TechMapComponent } from './tech-map/tech-map.component';
     MyTicketsComponent,
     ManagersNavComponent,
     MapComponent,
-    TechMapComponent
+    TechMapComponent,
+    TechNavComponent,
+    ScheduleComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +62,7 @@ import { TechMapComponent } from './tech-map/tech-map.component';
       apiKey: 'AIzaSyAWwhYJ8MBRN6YfD0VesqiDn1FIzEOT3O0'
     })
   ],
-  providers: [SessionService, TicketsService],
+  providers: [SessionService, TicketsService, FirebaseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
