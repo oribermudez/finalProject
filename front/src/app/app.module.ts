@@ -9,8 +9,7 @@ import * as Charts from 'fusioncharts/fusioncharts.charts';
 import * as FintTheme from 'fusioncharts/themes/fusioncharts.theme.fint';
 import { AgmCoreModule } from '@agm/core';
 import * as $ from 'jquery';
-import { FileSelectDirective } from "ng2-file-upload";
-
+import { FileUploadModule } from 'ng2-file-upload';
 
 // Services
 import {SessionService} from './services/auth.service';
@@ -36,7 +35,6 @@ import { TechMapComponent } from './tech-map/tech-map.component';
 import { TechNavComponent } from './tech-nav/tech-nav.component';
 import { ScheduleComponent } from './schedule/schedule.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -51,13 +49,13 @@ import { ScheduleComponent } from './schedule/schedule.component';
     MapComponent,
     TechMapComponent,
     TechNavComponent,
-    ScheduleComponent,
-    FileSelectDirective
+    ScheduleComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
+    FileUploadModule,
     MaterializeModule,
     FusionChartsModule.forRoot(FusionCharts, Charts, FintTheme),
     RouterModule.forRoot(routes),

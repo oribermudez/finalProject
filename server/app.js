@@ -1,3 +1,4 @@
+require('dotenv').config();
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -21,7 +22,7 @@ const corsOptions= {
 }
 app.use(require("cors")(corsOptions));
 
-require("mongoose").connect("mongodb://oribermudez:a1b2c3d4@ds213239.mlab.com:13239/final-project");
+require("mongoose").connect(process.env.mongoURL).then(console.log(`Conected to ${process.env.mongoURL}`));
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));

@@ -4,15 +4,16 @@ import { Observable } from 'rxjs/';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/observable/throw';
+import { environment } from '../../environments/environment';
 
 @Injectable()
 export class TicketsService {
   options = {withCredentials: true};
-
+  baseURL = environment.baseURL + 'api/tickets';
   constructor(private http: Http) { }
 
   multipleUpload(formdata) {
-    return this.http.post('http://localhost:3000/api/tickets/new', formdata)
+    return this.http.post(this.baseURL + '/new', formdata)
     .map((res: Response) => res.json())
     .map(info => info)
     .catch(e => {
@@ -22,7 +23,7 @@ export class TicketsService {
   }
 
   getTickets(): Observable<any> {
-    return this.http.get(`http://localhost:3000/api/tickets`)
+    return this.http.get(this.baseURL)
     .map((res: Response) => res.json())
     .map(tickets => tickets)
     .catch(e => {
@@ -32,7 +33,7 @@ export class TicketsService {
   }
 
   editTicket(id): Observable<any> {
-    return this.http.patch(`http://localhost:3000/api/tickets/edit/${id}`, {})
+    return this.http.patch(this.baseURL + `/edit/${id}`, {})
     .map((res: Response) => res.json())
     .map(tickets => tickets)
     .catch(e => {
@@ -42,7 +43,7 @@ export class TicketsService {
   }
 
   userTickets() {
-    return this.http.get(`http://localhost:3000/api/tickets/mytickets`, this.options)
+    return this.http.get(this.baseURL + `/mytickets`, this.options)
     .map((res: Response) => res.json())
     .map(tickets => tickets)
     .catch(e => {
@@ -52,7 +53,7 @@ export class TicketsService {
   }
 
   getZone(zone) {
-    return this.http.get(`http://localhost:3000/api/tickets/zone/${zone}`, this.options)
+    return this.http.get(this.baseURL + `/zone/${zone}`, this.options)
     .map((res: Response) => res.json())
     .map(tickets => tickets)
     .catch(e => {
