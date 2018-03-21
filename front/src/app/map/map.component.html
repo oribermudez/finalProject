@@ -9,13 +9,12 @@
           </agm-info-window>
         </agm-marker>
       </div>
-      <!-- <div *ngFor="let tech of techs">
-          <agm-marker [latitude]="tech.location[0]" [longitude]="tech.location[1]" [iconUrl]="'../assets/car-with-wrench.png'" (markerClick)="onChoseMarker(ticket)">
+      <div *ngFor="let tech of techs">
+          <agm-marker [latitude]="tech.location[0]" [longitude]="tech.location[1]" [iconUrl]="'../assets/car-with-wrench.png'">
             <agm-info-window> 
-              <b>Crew ID:</b> {{tech.user._id}}
             </agm-info-window>
           </agm-marker>
-        </div> -->
+        </div>
     </agm-map>
 </div>
 </section>

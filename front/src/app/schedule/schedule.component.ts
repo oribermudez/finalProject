@@ -19,7 +19,7 @@ export class ScheduleComponent implements OnInit {
         console.log(this.user);
       });
 
-    this.ticketServ.getZone(this.user.crew)
+    this.ticketServ.getZone(4)
     .subscribe(tickets => {
       this.tickets = tickets;
     });

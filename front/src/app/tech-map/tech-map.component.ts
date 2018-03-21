@@ -31,11 +31,7 @@ export class TechMapComponent implements OnInit {
         this.lat = position.coords.latitude;
         this.lng = position.coords.longitude;
         // .push crea un dato con nuevo id
-        firebase.database().ref('techs').child(this.user._id).push({ user: localStorage.getItem('user'), location: [this.lat, this.lng]})
-          .then(snap => {
-            this.key = snap.key;
-            firebase.database().ref('techs').child(this.user._id).child(this.key).set({ user: JSON.parse(localStorage.getItem('user')), location: [this.lat, this.lng]});
-          });
+        firebase.database().ref('techs').child(this.user._id).set({ user: localStorage.getItem('user'), location: [this.lat, this.lng]})
       });
     }
   }

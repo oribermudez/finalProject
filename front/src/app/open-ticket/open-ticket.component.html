@@ -33,7 +33,7 @@
             <div class="file-field input-field">
                 <div class="btn">
                   <span>Upload</span>
-                  <input name="image" type="file" multiple (change)="manageFile($event)">
+                  <input type="file" name="file" ng2FileSelect [uploader]="uploader" />      
                 </div>
                 <div class="file-path-wrapper">
                   <input class="file-path validate" type="text" placeholder="Modem photo.">

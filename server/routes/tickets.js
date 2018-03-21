@@ -5,7 +5,7 @@ var multer  = require('multer');
 var upload = multer({ dest: './public/uploads/' });
 
 router.get('/', controller.getTickets);
-router.post('/new', upload.array('image'), controller.postTicket);
+router.post('/new', upload.single('file'), controller.postTicket);
 router.patch('/edit/:id', controller.patchTicket);
 router.delete('/delete/:id', controller.deleteTicket);
 router.get('/mytickets', controller.myTickets);

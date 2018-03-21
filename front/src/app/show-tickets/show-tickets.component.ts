@@ -9,9 +9,8 @@ import firebase from '../services/firebase.service';
   templateUrl: './show-tickets.component.html',
   styleUrls: ['./show-tickets.component.css']
 })
-export class ShowTicketsComponent implements OnInit {
-  @Input() ticket;
 
+export class ShowTicketsComponent implements OnInit {
   tickets;
   zone1;
   zone2;
@@ -59,15 +58,17 @@ export class ShowTicketsComponent implements OnInit {
   }
 
   highlight(ticket) {
-      if(this.lastTarget){
-        console.log(this.lastTarget)
-        $('#zone' + this.lastTarget.zone).attr('style', 'display:none');
-        $('#' + this.lastTarget._id).css('background-color', 'white');
-      } 
-        this.target = ticket;
-        console.log('Highlight method: ', ticket);
-        $('#zone' + this.target.zone).attr('style', 'display:block');
-        $('#' + this.target._id).css('background-color', '#0089ec26');
-        this.lastTarget = ticket;
-      
+
+    if(this.target) {
+      console.log(this.lastTarget);
+      $('#zone' + this.lastTarget.zone).attr('style', 'display:none');
+      $('#' + this.lastTarget._id).css('background-color', 'white');
+    } 
+
+    this.target = ticket;
+    console.log('Highlight method: ', ticket);
+    $('#zone' + this.target.zone).attr('style', 'display:block');
+    $('#' + this.target._id).css('background-color', '#0089ec26');
+    this.lastTarget = ticket;
+  }
 }

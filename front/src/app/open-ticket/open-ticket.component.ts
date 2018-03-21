@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TicketsService } from '../services/tickets.service';
+import { FileUploader } from 'ng2-file-upload';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-open-ticket',
@@ -7,27 +9,26 @@ import { TicketsService } from '../services/tickets.service';
   styleUrls: ['./open-ticket.component.css']
 })
 export class OpenTicketComponent implements OnInit {
+  uploader: FileUploader = new FileUploader({
+    url: `http://localhost:3000/api/tickets/new`
+  });
+
   formData = new FormData();
-  constructor(private ticketServ: TicketsService) { }
+  constructor(private ticketServ: TicketsService, private route: Router) { }
 
   ngOnInit() {
     ($('.button-collapse')as any).sideNav();
     ($('select') as any).material_select();
   }
 
-  manageFile(e) {
-    this.formData.append(e.target.files[0].name, e.target.files[0]);
-    console.log(e.target.files[0]);
-  }
+  onSubmit(myForm) {
+    console.log(myForm.value.services)
+    this.uploader.onBuildItemForm = (item, form) => {
+      form.append('services', myForm.value.services);
+    };
+    this.uploader.uploadAll();
+    this.uploader.onCompleteItem = () => this.route.navigate(['profile']);
 
-  onSubmit(form) {
-    console.log('form value', form.value);
-    const keys = Object.keys(form.value);
-    for (let key of keys) {
-      this.formData.append(key, form.value);
-    }
-    console.log('formData', this.formData);
-    (this.ticketServ.multipleUpload(this.formData) as any).subscribe (res => console.log(res));
   }
 
 }

@@ -25,8 +25,8 @@ const userSchema = new require("mongoose").Schema({
         default: "USER"
     },
     crew:{
-        type:Schema.Types.ObjectId,
-        ref:"Crew",
+        mumber:Number,
+        zone:Number,
     }
 },
 {

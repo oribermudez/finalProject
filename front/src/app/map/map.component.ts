@@ -23,6 +23,7 @@ export class MapComponent implements OnInit {
   ngOnInit() {
     firebase.database().ref('techs').on('child_added', (snap) => {
       this.techs.push(snap.val());
+      console.log('snap', snap.val())
       console.log('techs array', this.techs)
     });
 
@@ -38,5 +39,6 @@ export class MapComponent implements OnInit {
     this.markerSelect.emit(this.target);
     console.log('Hijo: ', this.target);
   }
+
 
 }

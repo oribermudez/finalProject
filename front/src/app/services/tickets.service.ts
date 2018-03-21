@@ -12,7 +12,7 @@ export class TicketsService {
   constructor(private http: Http) { }
 
   multipleUpload(formdata) {
-    this.http.post('http://localhost:3000/api/tickets/new', formdata)
+    return this.http.post('http://localhost:3000/api/tickets/new', formdata)
     .map((res: Response) => res.json())
     .map(info => info)
     .catch(e => {

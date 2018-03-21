@@ -21,6 +21,8 @@ exports.getTickets = function(req, res, next) {
 }
 
 exports.postTicket = (req, res, next)=>{
+  console.log("creando ticket")
+  console.log(req.body)
   let arrayOfLinks = [];
   for (let file of req.files){
     arrayOfLinks.push('http://localhost:3000/uploads' + file.filename)
