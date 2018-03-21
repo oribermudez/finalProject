@@ -22,9 +22,18 @@ export class MapComponent implements OnInit {
 
   ngOnInit() {
     firebase.database().ref('techs').on('child_added', (snap) => {
-      this.techs.push(snap.val());
-      console.log('snap', snap.val())
-      console.log('techs array', this.techs)
+      const tech = snap.val();
+      tech['key'] = snap.key;
+      tech['lat'] = tech.location[0];
+      tech['lng'] = tech.location[1];
+      this.techs.push(tech);
+      console.log('snap', snap.val());
+      console.log('techs array', this.techs);
+    });
+
+    firebase.database().ref('techs').on('child_removed', (snap) => {
+      this.techs.push(snap.key);
+      this.techs = this.techs.filter(t => t.key !== snap.key);
     });
 
 

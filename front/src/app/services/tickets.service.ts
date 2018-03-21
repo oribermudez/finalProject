@@ -31,6 +31,16 @@ export class TicketsService {
     });
   }
 
+  editTicket(id): Observable<any> {
+    return this.http.patch(`http://localhost:3000/api/tickets/edit/${id}`, {})
+    .map((res: Response) => res.json())
+    .map(tickets => tickets)
+    .catch(e => {
+      console.log(e);
+      return Observable.throw(e);
+    });
+  }
+
   userTickets() {
     return this.http.get(`http://localhost:3000/api/tickets/mytickets`, this.options)
     .map((res: Response) => res.json())

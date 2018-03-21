@@ -24,6 +24,8 @@ export class TechNavComponent implements OnInit {
       this.route.navigate(['login']);
       localStorage.removeItem('user');
     });
-    firebase.database().ref('techs').child(this.user._id).set({l:'l'});
+    const updates = {};
+    updates['techs/' + this.user._id] = null;
+    firebase.database().ref().update(updates);
   }
 }

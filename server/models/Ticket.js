@@ -8,12 +8,12 @@ const ticketSchema = new require("mongoose").Schema({
         type:Schema.Types.ObjectId,
         ref:"User",
     },
-    images:{
+    image:{
         type:String
     },
     status: {
         type:String,
-        default: "Pendding",
+        default: "Pending",
     },
     zone: {
         type:Number,

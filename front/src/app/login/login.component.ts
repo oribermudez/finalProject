@@ -19,7 +19,17 @@ export class LoginComponent implements OnInit {
     .subscribe(data => {
       this.user = data;
       localStorage.setItem('user', JSON.stringify(data));
-      this.route.navigate(['mypage']);
+      switch (this.user.role) {
+        case 'USER':
+          this.route.navigate(['mypage']);
+        break;
+        case 'MANAGER':
+          this.route.navigate(['dashboard']);
+        break;
+        case 'TECH':
+          this.route.navigate(['techmap']);
+        break;
+      }
     });
   }
 

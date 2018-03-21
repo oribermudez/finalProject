@@ -15,32 +15,26 @@ exports.patchTicket = (req,res,next)=>{
 }
 
 exports.getTickets = function(req, res, next) {
-    Ticket.find()
+    Ticket.find({status: "Pending"})
     .then(items=>res.status(200).json(items))
     .catch(e=>res.status(500).send(e));
 }
 
 exports.postTicket = (req, res, next)=>{
   console.log("creando ticket")
-  console.log(req.body)
-  let arrayOfLinks = [];
-  for (let file of req.files){
-    arrayOfLinks.push('http://localhost:3000/uploads' + file.filename)
-  }
+  console.log(req.user);
     const newTicket = new Ticket({
       creator: req.user._id,
-      services: req.body.services,
-      connected: req.body.connected,
-      resetted: req.body.resetted,
-      los: req.body.los,
+      services: [req.body.services],
+      image: `/uploads/${req.file.filename}`,
       owner: req.user.name,
       location: {
         type: "Point",
         coordinates: [req.user.coordinates.lng, req.user.coordinates.lat ],
         address: req.user.address,
-    },
-      image: arrayOfLinks,
-    });
+    }    
+  });
+    console.log(newTicket)
 
     newTicket.save()
       .then(ticket =>{
@@ -80,7 +74,7 @@ exports.myTickets = function(req, res, next) {
 }
 
 exports.zone = function(req, res, next) {
-  Ticket.find({zone:req.params.zone})
+  Ticket.find( {$and: [{status: "Pending"}, {zone:req.params.zone}]} )
   .populate("creator")
   .then(items=>res.status(200).json(items))
   .catch(e=>res.status(500).send(e));

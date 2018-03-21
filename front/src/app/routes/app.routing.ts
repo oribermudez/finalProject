@@ -11,6 +11,7 @@ import { TechMapComponent } from '../tech-map/tech-map.component';
 import { ScheduleComponent } from '../schedule/schedule.component';
 
 export const routes: Routes = [
+    {path: '',  component: LoginComponent},
     {path: 'mypage' , component: ProfileComponent},
     {path: 'login' , component: LoginComponent},
     {path: 'newticket' , component: OpenTicketComponent},

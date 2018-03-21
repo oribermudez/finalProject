@@ -27,7 +27,7 @@ export class OpenTicketComponent implements OnInit {
       form.append('services', myForm.value.services);
     };
     this.uploader.uploadAll();
-    this.uploader.onCompleteItem = () => this.route.navigate(['profile']);
+    this.uploader.onCompleteItem = () => this.route.navigate(['mypage']);
 
   }
 

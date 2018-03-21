@@ -16,14 +16,19 @@ export class ScheduleComponent implements OnInit {
     this.session.isLoggedIn()
       .subscribe(user => {
         this.user = user;
-        console.log(this.user);
+        console.log('zona', this.user.crew.zone);
+        this.ticketServ.getZone(this.user.crew.zone)
+          .subscribe(tickets => {
+            this.tickets = tickets;
+          });
       });
+  }
 
-    this.ticketServ.getZone(4)
-    .subscribe(tickets => {
-      this.tickets = tickets;
+  changeStatus(id) {
+    console.log(id);
+    this.ticketServ.editTicket(id)
+    .subscribe(ticket => {
+      console.log(ticket);
     });
   }
-  
-
 }

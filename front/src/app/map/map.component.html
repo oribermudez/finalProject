@@ -9,9 +9,10 @@
           </agm-info-window>
         </agm-marker>
       </div>
-      <div *ngFor="let tech of techs">
-          <agm-marker [latitude]="tech.location[0]" [longitude]="tech.location[1]" [iconUrl]="'../assets/car-with-wrench.png'">
+      <div *ngIf="techs.length > 0">
+          <agm-marker *ngFor="let tech of techs" [latitude]="tech.lat" [longitude]="tech.lng" [iconUrl]="'../assets/car-with-wrench.png'">
             <agm-info-window> 
+                bliss
             </agm-info-window>
           </agm-marker>
         </div>
