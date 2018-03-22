@@ -10,11 +10,32 @@
       </p>
       <div>
         <ul class="hori">
-            <li><a (click)="changeStatus(ticket._id)" class="btn-floating red"><i class="material-icons">insert_chart</i></a></li>
-            <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
-            <li><a class="btn-floating green"><i class="material-icons">publish</i></a></li>
-            <li><a class="btn-floating blue"><i class="material-icons">attach_file</i></a></li>
+            <li><a (click)="changeStatus(ticket)" class="btn-floating blue"><i class="material-icons">publish</i></a></li>
+            <li><a (click)="arrivedLocation(ticket)" class="btn-floating black darken-1"><i class="material-icons">home</i></a></li>
+            <li><a (click)="getID(ticket)" class="btn-floating green modal-trigger" href="#modal1"><i class="material-icons">attach_file</i></a></li>
           </ul>
         </div>
   </li>
 </ul>
+
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal bottom-sheet">
+  <div class="modal-content">
+    <h5>Service working picture</h5>
+      <form action="#">
+          <div class="file-field input-field">
+            <div class="btn">
+              <span>File</span>
+              <input name="file" ng2FileSelect [uploader]="uploader" type="file" >
+            </div>
+            <div class="file-path-wrapper">
+              <input class="file-path validate" type="text" placeholder="Upload picture">
+            </div>
+          </div>
+        </form>
+  </div>
+  <div class="modal-footer">
+      <button id="send-btn" (click)="modifyTicket()" class="btn waves-effect waves-light" type="submit" >Send</button>
+  </div>
+</div>

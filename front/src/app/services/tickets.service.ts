@@ -32,8 +32,18 @@ export class TicketsService {
     });
   }
 
-  editTicket(id): Observable<any> {
-    return this.http.patch(this.baseURL + `/edit/${id}`, {})
+  editTicket(item, status): Observable<any> {
+    return this.http.patch(this.baseURL + `/edit/${item._id}`, {status: status})
+    .map((res: Response) => res.json())
+    .map(tickets => tickets)
+    .catch(e => {
+      console.log(e);
+      return Observable.throw(e);
+    });
+  }
+
+  ticketProof(item, status): Observable<any> {
+    return this.http.patch(this.baseURL + `/editpic/${item._id}`, {status: status})
     .map((res: Response) => res.json())
     .map(tickets => tickets)
     .catch(e => {
@@ -54,6 +64,16 @@ export class TicketsService {
 
   getZone(zone) {
     return this.http.get(this.baseURL + `/zone/${zone}`, this.options)
+    .map((res: Response) => res.json())
+    .map(tickets => tickets)
+    .catch(e => {
+      console.log(e);
+      return Observable.throw(e);
+    });
+  }
+
+  techTickets(zone) {
+    return this.http.get(this.baseURL + `/techtickets/${zone}`, this.options)
     .map((res: Response) => res.json())
     .map(tickets => tickets)
     .catch(e => {

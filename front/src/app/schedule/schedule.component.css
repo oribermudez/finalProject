@@ -45,3 +45,7 @@ img, .brand-logo{
 .collection-item.avatar{
     padding: 5%;
 }
+
+#send-btn {
+    background-color: #3f51b5
+}

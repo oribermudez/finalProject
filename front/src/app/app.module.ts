@@ -10,6 +10,10 @@ import * as FintTheme from 'fusioncharts/themes/fusioncharts.theme.fint';
 import { AgmCoreModule } from '@agm/core';
 import * as $ from 'jquery';
 import { FileUploadModule } from 'ng2-file-upload';
+import { ToastModule } from 'ng2-toastr/ng2-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CustomOption } from './custom-option';
+import {ToastOptions} from 'ng2-toastr';
 
 // Services
 import {SessionService} from './services/auth.service';
@@ -59,11 +63,13 @@ import { ScheduleComponent } from './schedule/schedule.component';
     MaterializeModule,
     FusionChartsModule.forRoot(FusionCharts, Charts, FintTheme),
     RouterModule.forRoot(routes),
+    ToastModule.forRoot(),
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAWwhYJ8MBRN6YfD0VesqiDn1FIzEOT3O0'
-    })
+    }),
+    BrowserAnimationsModule
   ],
-  providers: [SessionService, TicketsService, FirebaseService],
+  providers: [SessionService, TicketsService, FirebaseService, {provide: ToastOptions, useClass: CustomOption}],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

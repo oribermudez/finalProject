@@ -30,3 +30,7 @@ img, .brand-logo{
 .side-nav li > a > i{
     color: white;
 }
+
+.ToastOptions {
+    dismiss: click;
+}

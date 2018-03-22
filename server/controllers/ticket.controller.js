@@ -9,6 +9,7 @@ exports.deleteTicket = (req,res,next)=>{
 }
 
 exports.patchTicket = (req,res,next)=>{
+  console.log(req.body);
   Ticket.findByIdAndUpdate(req.params.id, req.body, {new:true})
   .then(item=>res.status(200).json(item))
   .catch(e=>res.status(500).send(e));
@@ -78,4 +79,20 @@ exports.zone = function(req, res, next) {
   .populate("creator")
   .then(items=>res.status(200).json(items))
   .catch(e=>res.status(500).send(e));
+}
+
+exports.techTickets = function(req, res, next) {
+  Ticket.find({zone:req.params.zone})
+  .populate("creator")
+  .then(items=>res.status(200).json(items))
+  .catch(e=>res.status(500).send(e));
+}
+
+exports.patchTicketPic = (req,res,next)=>{
+  console.log(req.files)
+const updates = {proof: `/uploads/${req.file.filename}`}  
+Ticket.findByIdAndUpdate(req.params.id, updates, {new:true})
+  .then(item=>res.status(200).json(item))
+  .catch(e=>res.status(500).send(e));
+  c
 }

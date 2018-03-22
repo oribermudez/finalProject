@@ -7,42 +7,89 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
   id = 'chart1';
-  width = 375;
+  width = 600;
   height = 400;
   type = 'column2d';
   dataFormat = 'json';
   dataSource;
+
+  id2 = '';
+  width2 = 600 ;
+  height2 = 400;
+  type2 = 'pie3d';
+  datasource2 = 'json';
+  myDataSource;
   
   constructor() {
     this.dataSource = {
-      "chart": {
-          "caption": "Tickets per day",
-          "subCaption": "Number of tickets generated in the last 5 days",
-          "theme": "fint"
+      'chart': {
+          'caption': 'Tickets per day',
+          'subCaption': 'Number of tickets generated in the last 5 days',
+          'theme': 'fint'
       },
-      "data": [
+
+      'data': [
           {
-              "label": "Bakersfield Central",
-              "value": "880000"
+              'label': '17 Marzo 2018',
+              'value': '16'
           },
           {
-              "label": "Garden Groove harbour",
-              "value": "730000"
+              'label': '18 Marzo 2018',
+              'value': '10'
           },
           {
-              "label": "Los Angeles Topanga",
-              "value": "590000"
+              'label': '19 Marzo 2018',
+              'value': '14'
           },
           {
-              "label": "Compton-Rancho Dom",
-              "value": "520000"
+              'label': '20 Marzo 2018',
+              'value': '8'
           },
           {
-              "label": "Daly City Serramonte",
-              "value": "330000"
+              'label': '21 Marzo 2018',
+              'value': '19'
           }
       ]
   };
+
+  this.myDataSource = {
+    'chart': {
+        'caption': 'Outages per zone',
+        'subcaption': 'This month',
+        'startingangle': '120',
+        'showlabels': '0',
+        'showlegend': '1',
+        'enablemultislicing': '0',
+        'slicingdistance': '15',
+        'showpercentvalues': '1',
+        'showpercentintooltip': '0',
+        'plottooltext': 'Zone : $label Tickets : $datavalue',
+        'theme': 'fint'
+    },
+    'data': [
+        {
+            'label': 'Polanco',
+            'value': '8'
+        },
+        {
+            'label': 'Reforma',
+            'value': '4'
+        },
+        {
+            'label': 'Narvarte',
+            'value': '5'
+        },
+        {
+            'label': 'Condesa, Nápoles',
+            'value': '10'
+        },
+        {
+            'label': 'Coyoacan',
+            'value': '2'
+        }
+    ]
+};
+
 }
 
   ngOnInit() {

@@ -19,13 +19,7 @@ const ticketSchema = new require("mongoose").Schema({
         type:Number,
         default: 1,
     },
-    connected:{
-        type:Boolean
-    },
-    resetted:{
-        type:Boolean
-    },
-    LOS:{
+    proof:{
         type:String,
     },
     owner: {

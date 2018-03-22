@@ -8,9 +8,9 @@
             <img src="../assets/statistics.png">
           </div>
           <div class="card-stacked">
-              <h6 class="header"><b>Tickets per day</b></h6>
+              <h6 class="header"><b>Daily average of tickets</b></h6>
             <div class="card-content">
-              <p><b></b></p>
+              <p class="sta"><b>14</b></p>
               </div>
         </div>
       </div>
@@ -23,9 +23,9 @@
             <img src="../assets/line-chart.png">
           </div>
           <div class="card-stacked">
-              <h6 class="header"><b>More fail populated zone</b></h6>
+              <h6 class="header"><b> Zone with the most outages</b></h6>
             <div class="card-content">
-              <p><b></b></p>
+              <p class="sta"><b>Zone 4</b></p>
           </div>
         </div>
       </div>
@@ -40,7 +40,7 @@
           <div class="card-stacked">
               <h6 class="header"><b>Average repair time</b></h6>
             <div class="card-content">
-              <p><b></b></p>
+              <p class="sta"><b>1 hour</b></p>
            </div>
         </div>
       </div>
@@ -55,7 +55,7 @@
           <div class="card-stacked">
               <h6 class="header"><b>Average repairs a day</b></h6>
             <div class="card-content">
-              <p><b></b></p>
+              <p class="sta" ><b>9</b></p>
            </div>
         </div>
       </div>
@@ -71,6 +71,16 @@
     [dataFormat]="dataFormat"
     [dataSource]="dataSource"
 ></fusioncharts>
+
+<fusioncharts
+    [id]="id2"
+    [width]="width2"
+    [height]="height2"
+    [type]="type2"
+    [dataFormat]="dataFormat2"
+    [dataSource]="myDataSource"
+></fusioncharts>
+
 
 
 

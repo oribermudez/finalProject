@@ -13,7 +13,6 @@ export class OpenTicketComponent implements OnInit {
     url: `http://localhost:3000/api/tickets/new`
   });
 
-  formData = new FormData();
   constructor(private ticketServ: TicketsService, private route: Router) { }
 
   ngOnInit() {

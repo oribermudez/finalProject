@@ -1,5 +1,6 @@
-import { Component , OnInit} from '@angular/core';
+import { Component , OnInit, ViewContainerRef} from '@angular/core';
 import { extend } from 'webdriver-js-extender';
+import { ToastsManager } from 'ng2-toastr/ng2-toastr';
 
 declare var jquery: any;
 declare var $: any;
@@ -11,6 +12,10 @@ declare var $: any;
 })
 export class AppComponent implements OnInit {
   title = 'app';
+
+  constructor(public toastr: ToastsManager, vcr: ViewContainerRef) {
+    this.toastr.setRootViewContainerRef(vcr);
+ }
 
   ngOnInit() {
   }
