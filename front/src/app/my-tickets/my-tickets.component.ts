@@ -21,7 +21,7 @@ export class MyTicketsComponent implements OnInit {
         this.tickets = tickets;
       });
 
-     
+      this.showWarning();
   }
 
 
