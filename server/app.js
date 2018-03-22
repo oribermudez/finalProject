@@ -52,10 +52,6 @@ app.use('/api/users', users);
 app.use('/api/auth', auth);
 app.use('/api/tickets', tickets);
 
-app.all('/*', (req, res) => {
-  res.sendFile(__dirname + '/public/index.html');
-});
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
@@ -72,6 +68,10 @@ app.use(function(err, req, res, next) {
   // render the error page
   res.status(err.status || 500);
   res.render('error');
+});
+
+app.all('/*', (req, res) => {
+  res.sendFile(__dirname + '/public/index.html');
 });
 
 module.exports = app;
