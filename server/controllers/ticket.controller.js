@@ -90,9 +90,12 @@ exports.techTickets = function(req, res, next) {
 
 exports.patchTicketPic = (req,res,next)=>{
   console.log(req.files)
-const updates = {proof: `/uploads/${req.file.filename}`}  
+const updates = {
+  proof: `/uploads/${req.files[0].filename}`,
+  status: 'Solved'
+}  
+console.log(updates)
 Ticket.findByIdAndUpdate(req.params.id, updates, {new:true})
   .then(item=>res.status(200).json(item))
   .catch(e=>res.status(500).send(e));
-  c
 }

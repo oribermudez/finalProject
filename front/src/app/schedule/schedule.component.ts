@@ -10,7 +10,6 @@ import { FileUploader } from 'ng2-file-upload';
 })
 export class ScheduleComponent implements OnInit {
   uploader: FileUploader = new FileUploader({
-    url: ''
   });
   tickets;
   user;
@@ -68,24 +67,21 @@ export class ScheduleComponent implements OnInit {
 
   modifyTicket() {
     console.log(this.TICKET);
-    this.uploader.options.url = `http://localhost:3000/api/tickets/editpic/${this.TICKET._id}`;
-    console.log(this.uploader)
     this.uploader.uploadAll();
 
     this.uploader.onCompleteItem = () => {
-      this.ticketServ.ticketProof(this.TICKET, 'Solved')
-      .subscribe(item => {
-        console.log(item);
+      console.log("done")
         this.ticketServ.techTickets(this.user.crew.zone)
             .subscribe(tickets => {
               this.tickets = tickets;
             });
-      });
     };
   }
 
   getID(ticket) {
     console.log(ticket);
     this.TICKET = ticket;
+    this.uploader.options.url = `http://localhost:3000/api/tickets/editpic/${ticket._id}`;
+
   }
 }
