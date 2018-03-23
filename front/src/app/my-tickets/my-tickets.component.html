@@ -9,5 +9,10 @@
          <b>Created at:</b> {{ticket.created_at}} <br>
          <b>Status:</b> {{ticket.status}}
       </p>
+      <div *ngIf="ticket.status === 'Solved'">
+        <button id="review-btn" class="btn waves-effect waves-light" type="submit" name="action">Review service
+            <i class="material-icons right">rate_review</i>
+          </button>
+      </div>
   </li>
 </ul>

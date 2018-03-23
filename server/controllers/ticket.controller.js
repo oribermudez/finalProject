@@ -16,7 +16,7 @@ exports.patchTicket = (req,res,next)=>{
 }
 
 exports.getTickets = function(req, res, next) {
-    Ticket.find({status: "Pending"})
+    Ticket.find({ status: { $ne: 'Solved' } })
     .then(items=>res.status(200).json(items))
     .catch(e=>res.status(500).send(e));
 }
@@ -75,14 +75,14 @@ exports.myTickets = function(req, res, next) {
 }
 
 exports.zone = function(req, res, next) {
-  Ticket.find( {$and: [{status: "Pending"}, {zone:req.params.zone}]} )
+  Ticket.find( {$and: [{ status: { $ne: 'Solved' } }, {zone:req.params.zone}]} )
   .populate("creator")
   .then(items=>res.status(200).json(items))
   .catch(e=>res.status(500).send(e));
 }
 
 exports.techTickets = function(req, res, next) {
-  Ticket.find({zone:req.params.zone})
+  Ticket.find({$and: [{zone:req.params.zone}, { status: { $ne: 'Solved' } }]})
   .populate("creator")
   .then(items=>res.status(200).json(items))
   .catch(e=>res.status(500).send(e));

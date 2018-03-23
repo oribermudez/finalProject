@@ -34,3 +34,8 @@ img, .brand-logo{
 .ToastOptions {
     dismiss: click;
 }
+
+#review-btn {
+    margin: 3%;;
+    background-color: #F44336;
+}

@@ -36,6 +36,10 @@ export class MapComponent implements OnInit {
       this.techs = this.techs.filter(t => t.key !== snap.key);
     });
 
+    firebase.database().ref('techs').on('child_changed', (snap) => {
+      console.log(snap);
+    });
+
 
     this.ticketServ.getTickets()
     .subscribe(tickets => {

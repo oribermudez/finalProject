@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TicketsService } from '../services/tickets.service';
 import { SessionService } from '../services/auth.service';
+import { UserService } from '../services/user.service';
 import { FileUploader } from 'ng2-file-upload';
 
 @Component({
@@ -12,7 +13,7 @@ export class ScheduleComponent implements OnInit {
   uploader: FileUploader = new FileUploader({
   });
   tickets;
-  user;
+  user = {name:  '', crew: { zone: ''}};
   TICKET;
   constructor(private ticketServ: TicketsService, private session: SessionService) { }
 
@@ -70,7 +71,6 @@ export class ScheduleComponent implements OnInit {
     this.uploader.uploadAll();
 
     this.uploader.onCompleteItem = () => {
-      console.log("done")
         this.ticketServ.techTickets(this.user.crew.zone)
             .subscribe(tickets => {
               this.tickets = tickets;

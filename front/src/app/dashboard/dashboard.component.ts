@@ -14,7 +14,7 @@ export class DashboardComponent implements OnInit {
   dataSource;
 
   id2 = '';
-  width2 = 600 ;
+  width2 = 600;
   height2 = 400;
   type2 = 'pie3d';
   datasource2 = 'json';

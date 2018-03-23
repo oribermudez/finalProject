@@ -27,6 +27,9 @@ const userSchema = new require("mongoose").Schema({
     crew:{
         mumber:Number,
         zone:Number,
+    },
+    status:{
+        type:String,
     }
 },
 {
