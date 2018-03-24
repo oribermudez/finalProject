@@ -70,7 +70,7 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-app.use('/*', (req, res) => {
+app.all('/*', (req, res) => {
   res.sendFile(__dirname + '/public/index.html');
 });
 
