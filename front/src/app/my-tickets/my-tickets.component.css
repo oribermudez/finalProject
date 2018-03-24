@@ -31,11 +31,17 @@ img, .brand-logo{
     color: white;
 }
 
-.ToastOptions {
-    dismiss: click;
-}
-
 #review-btn {
     margin: 3%;;
+    background-color: #F44336;
+}
+
+.hori{
+    display: flex;
+    justify-content: space-around;
+    padding: 3%;
+}
+
+#send-btn{
     background-color: #F44336;
 }

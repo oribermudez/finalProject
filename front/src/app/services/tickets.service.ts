@@ -32,6 +32,16 @@ export class TicketsService {
     });
   }
 
+  isReviewed(item, review): Observable<any> {
+    return this.http.patch(this.baseURL + `/edit/${item._id}`, {reviewed: review})
+    .map((res: Response) => res.json())
+    .map(tickets => tickets)
+    .catch(e => {
+      console.log(e);
+      return Observable.throw(e);
+    });
+  }
+
   editTicket(item, status): Observable<any> {
     return this.http.patch(this.baseURL + `/edit/${item._id}`, {status: status})
     .map((res: Response) => res.json())

@@ -13,8 +13,10 @@ export class ScheduleComponent implements OnInit {
   uploader: FileUploader = new FileUploader({
   });
   tickets;
-  user = {name:  '', crew: { zone: ''}};
+  user;
   TICKET;
+  lat = 19.4015348;
+  lng = -99.1808186;
   constructor(private ticketServ: TicketsService, private session: SessionService) { }
 
   ngOnInit() {
@@ -37,6 +39,7 @@ export class ScheduleComponent implements OnInit {
     this.ticketServ.editTicket(ticket, 'On our way')
     .subscribe(item => {
       console.log(item);
+      
       this.ticketServ.techTickets(this.user.crew.zone)
           .subscribe(tickets => {
             this.tickets = tickets;

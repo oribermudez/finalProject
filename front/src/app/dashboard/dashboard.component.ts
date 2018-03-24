@@ -30,23 +30,23 @@ export class DashboardComponent implements OnInit {
 
       'data': [
           {
-              'label': '17 Marzo 2018',
+              'label': '18 Marzo 2018',
               'value': '16'
           },
           {
-              'label': '18 Marzo 2018',
+              'label': '19 Marzo 2018',
               'value': '10'
           },
           {
-              'label': '19 Marzo 2018',
+              'label': '20 Marzo 2018',
               'value': '14'
           },
           {
-              'label': '20 Marzo 2018',
+              'label': '21 Marzo 2018',
               'value': '8'
           },
           {
-              'label': '21 Marzo 2018',
+              'label': '22 Marzo 2018',
               'value': '19'
           }
       ]

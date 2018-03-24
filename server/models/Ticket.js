@@ -32,6 +32,10 @@ const ticketSchema = new require("mongoose").Schema({
             type:String,
         }
     },
+    reviewed: {
+        type:Boolean,
+        default: false,
+    }
     
 },
 {
